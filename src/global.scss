@@ -1,0 +1,24 @@
+
+/// global styles in project; 
+$main_color: #2159CF;
+$primary_color: '';
+
+// mixin for dry;
+
+@mixin centeredFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin spaceBetweenBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  @mixin spaceAroundBlock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }

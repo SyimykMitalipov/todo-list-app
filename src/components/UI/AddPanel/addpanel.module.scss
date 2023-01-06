@@ -1,0 +1,15 @@
+@import '../../../global.scss';
+
+
+.addPanel {
+   width: 40%;
+   @include spaceAroundBlock;
+   >input {
+    height: 50px;
+   }
+   >button {
+    height: 50px;
+    margin-left: 10px;
+    width: 20%;
+   }
+}
