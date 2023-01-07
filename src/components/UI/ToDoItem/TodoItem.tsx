@@ -38,7 +38,7 @@ const TodoItem:FC<IToDoItemProps> = ({ todo, currentChangeTodo, handleSetChangeT
     currentChangeTodo ?
       <Form className={classes.changeBlock}>
         <Input value={newValue} onChange={handleChangeValue} placeholder='Change you To Do' />
-        <Button htmlType='submit' type='primary' disabled={ newValue === '' } onClick={() => handleEdit(todo.id, newValue)}>Save</Button>
+        <Button htmlType='submit' type='primary' disabled={ newValue.length <= 0} onClick={() => handleEdit(todo.id, newValue)}>Save</Button>
         <Button onClick={() => handleSetChangeTodo(0)} danger>Cancel</Button>
       </Form>
       :

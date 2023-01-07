@@ -19,6 +19,8 @@ import classes from './home.module.scss';
 // import UI components from antd;
 import { List, Typography } from 'antd';
 
+
+/// interface for functions;
 const Home = () => {
   // state for find current changing todo;
   const [ changeTodo, setChangingTodo ] = useState<number>();
@@ -35,12 +37,12 @@ const Home = () => {
   }, [ dispatch ]);
 
   //function for dispatch delete function;
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: number): void => {
     dispatch(deleteTodo({ id: id }));
   };
 
   //function for create new todo;
-  const handleCreate = (todo: string) => {
+  const handleCreate = (todo: string): void => {
     dispatch(createTodo({
       title: todo,
       completed: false,
@@ -48,17 +50,17 @@ const Home = () => {
   };
 
   // function for dispatch change status of todo || completed;
-  const handleDone = (id:number, status: boolean) => {
+  const handleDone = (id:number, status: boolean): void => {
     dispatch(updateTodo({ id: id, completed: !status }));
   };
 
   // function for change current editing todo;
-  const handleSetChangeTodo = (id: number) => {
+  const handleSetChangeTodo = (id: number): void => {
     setChangingTodo(id);
   };
 
   // function for dispatch edit function;
-  const handleEdit = (id: number, newValue: string) => {
+  const handleEdit = (id: number, newValue: string): void => {
     dispatch(updateTodo({
       id: id,
       title: newValue
@@ -68,7 +70,7 @@ const Home = () => {
 
   return (
     <>
-      {error && <h2>Error</h2>}
+      {error && <Typography.Title>Error</Typography.Title>}
       <div className={classes.main}>
         <Typography.Title>ToDo List</Typography.Title>
 
