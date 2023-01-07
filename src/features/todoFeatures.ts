@@ -36,7 +36,7 @@ export const createTodo = createAsyncThunk(
 export const updateTodo = createAsyncThunk(
   `${name}/updateTodos`,
   async (todo:IToDoFeatures) => {
-    const response = await requester.patch(`${ENDPOINTS.TODOS}/${todo.id}`, todo);
+    const response = await requester.patch<IToDo>(`${ENDPOINTS.TODOS}/${todo.id}`, todo);
     return response.data;
   }
 );
