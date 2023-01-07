@@ -27,7 +27,7 @@ export const getToDos = createAsyncThunk(
 export const createTodo = createAsyncThunk(
   `${name}/createTodos`,
   async (todo:IToDoFeatures) => {
-    const response = await requester.post(ENDPOINTS.TODOS, todo);
+    const response = await requester.post<IToDo>(ENDPOINTS.TODOS, todo);
     return response.data;
   }
 );
